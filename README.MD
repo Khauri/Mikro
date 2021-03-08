@@ -38,4 +38,4 @@ TODO
 
 ## License
 
-MIT
+MIT (Exact same as Marko)
