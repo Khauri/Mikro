@@ -1,0 +1,14 @@
+import {css} from '@emotion/css';
+import {addCriticalClass} from '../mikro-utils';
+import {compose, typography, space, color, layout, flexbox, grid, background, border} from 'styled-system';
+static const getStyles = compose(typography, space, color, layout, flexbox, grid, background, border);
+
+$ {
+  const {as = 'div', renderBody, ...styles} = input;
+  const classname = css(getStyles(styles));
+  addCriticalClass(classname);
+}
+
+<${as} id=input.id class=[input.class, classname] style=input.style on-click('emit', 'click')>
+  <${renderBody} />
+</>
