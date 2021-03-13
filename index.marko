@@ -1,10 +1,15 @@
+import themes from './themes';
+
 <head>
   <title>Mikro Component Library</title>
 </head>
 <body>
-  <mikro-box m=2 p=3 bg="lightgray" borderRadius=4 border="1px solid gray">
-    Mikro Component Library
-  </mikro-box>
+  <mikro-theme-provider theme=themes>
+    <mikro-box p=3 bg="lightgray">
+      <mikro-header>Mikro</mikro-header>
+      <mikro-text>A tiny component Marko component Library</mikro-text>
+    </mikro-box>
+  </mikro-theme-provider>
   <mikro-styles />
 </body>
 

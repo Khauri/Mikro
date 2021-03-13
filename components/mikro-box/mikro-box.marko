@@ -1,14 +1,24 @@
 import {css} from '@emotion/css';
 import {addCriticalClass} from '../mikro-utils';
-import {compose, typography, space, color, layout, flexbox, grid, background, border} from 'styled-system';
-static const getStyles = compose(typography, space, color, layout, flexbox, grid, background, border);
+import {compose, variant, space, color, layout, flexbox, grid, background, border, get} from 'styled-system';
+static const getStyles = compose(space, color, layout, flexbox, grid, background, border);
+static const getVariants = ({theme, vx, tx = 'variants'}) => get(theme, `${tx}.${vx}`, get(theme, vx));
 
-$ {
-  const {as = 'div', renderBody, ...styles} = input;
-  const classname = css(getStyles(styles));
-  addCriticalClass(classname);
-}
-
-<${as} id=input.id class=[input.class, classname] style=input.style on-click('emit', 'click')>
-  <${renderBody} />
-</>
+<context|{theme}| from="mikro-theme-provider">
+  $ {
+    const {as = 'div', renderBody, variant: vx, tx, ...styles} = input;
+    const variants = getVariants({theme, vx, tx});
+    const stylesObj = getStyles({...variants, ...styles});
+    const classname = css(stylesObj);
+    console.log(variants, stylesObj);
+    addCriticalClass(classname);
+  }
+  <${as}
+    id=input.id
+    class=[input.class, classname]
+    style=input.style
+    on-click('emit', 'click')
+  >
+    <${renderBody} />
+  </>
+</context>
