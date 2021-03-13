@@ -5,9 +5,14 @@ import themes from './themes';
 </head>
 <body>
   <mikro-theme-provider theme=themes>
-    <mikro-box p=3 bg="lightgray">
-      <mikro-header>Mikro</mikro-header>
-      <mikro-text>A tiny component Marko component Library</mikro-text>
+    <mikro-box p=3 bg="background">
+      <mikro-header as="h1">Mikro</mikro-header>
+      <mikro-text>A tiny component Marko component Library inspired by 
+        <mikro-link href="https://rebassjs.org/">Rebass</mikro-link>
+      </mikro-text>
+    </mikro-box>
+    <mikro-box p=3>
+      <mikro-button>Get Started!</mikro-button>
     </mikro-box>
   </mikro-theme-provider>
   <mikro-styles />

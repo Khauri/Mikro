@@ -24,6 +24,7 @@
     "@emotion/cache": "^11.1.3",
     "@emotion/css": "^11.1.3",
     "@emotion/server": "^11.0.0",
-    "@marko-tags/context": "^2.2.2"
+    "@marko-tags/context": "^2.2.2",
+    "@styled-system/css": "^5.1.5"
   }
 }
