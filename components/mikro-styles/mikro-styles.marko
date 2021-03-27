@@ -2,5 +2,4 @@ import {server} from '../mikro-utils';
 import {extractCriticalClasses} from '../mikro-utils';
 $ const {ids = [], css} = extractCriticalClasses();
 
-<!-- TODO: Ensure this tag is server-rendered only -->
 <style data-emotion=`css ${ids.join(' ')}`>${css}</style>

@@ -1,10 +1,13 @@
 {
   "name": "marko-bit-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "A small set of css-in-js based Marko components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "marko-build ./site",
+    "serve": "marko-serve ./site",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -26,5 +29,17 @@
     "@emotion/server": "^11.0.0",
     "@marko-tags/context": "^2.2.2",
     "@styled-system/css": "^5.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.13",
+    "@marko/build": "^4.1.3",
+    "@marko/serve": "^4.1.3",
+    "@storybook/addon-actions": "^6.2.0-rc.10",
+    "@storybook/addon-essentials": "^6.2.0-rc.10",
+    "@storybook/addon-links": "^6.2.0-rc.10",
+    "@storybook/builder-webpack5": "^6.2.0-rc.10",
+    "@storybook/marko": "^6.2.0-rc.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.28.0"
   }
 }
