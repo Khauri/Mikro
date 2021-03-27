@@ -1,8 +1,10 @@
+$ const {src, srcset, ...styles} = input;
 <mikro-box
   as="img"
-  ...input
+  ...styles
   __css={
     maxWidth: '100%',
     height: 'auto',
   }
+  _raw={src, srcset}
 />

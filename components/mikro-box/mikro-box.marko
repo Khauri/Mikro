@@ -6,12 +6,11 @@ import defaultTheme from '../../site/themes'; // TODO: Remove this
 import {addCriticalClass} from '../mikro-utils';
 
 static {
-  const getStyles = compose(space, layout, typography, color, flexbox, grid);
   const getVariantStyles = ({theme, vx, tx = 'variants'}) => 
     _css(get(theme, `${tx}.${vx}`, get(theme, vx)))(theme);
 }
 
-<context|{theme = defaultTheme}| from="mikro-theme-provider">
+<context|{providedTheme = defaultTheme}| from="mikro-theme-provider">
   $ {
     const {
       as = 'div',
@@ -19,15 +18,16 @@ static {
       variant: vx,
       tx,
       sx,
+      theme = providedTheme,
       __css,
       // TODO: Figure out a better way to extract non-style properties
-      href, src,
+      _raw,
       ...styles
     } = input;
     const baseStyles = _css(__css)(theme);
     const sxStyles = _css(sx)(theme);
     const variantStyles = getVariantStyles({theme, vx, tx});
-    const inputStyles = getStyles(_css(styles)(theme));
+    const inputStyles = _css(styles)(theme);
     const compositeStyles = {
       boxSizing: 'border-box',
       margin: 0,
@@ -44,8 +44,7 @@ static {
     id=input.id
     class=[input.class, classname]
     style=input.style
-    href=href
-    src=src
+    ..._raw
     on-click('emit', 'click')
   >
     <${renderBody} />

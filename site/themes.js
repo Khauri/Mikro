@@ -16,7 +16,7 @@ module.exports = {
   },
   fonts: {
     body: 'Roboto, sans-serif',
-    heading: 'inherit',
+    heading: 'Lato, sans-serif',
     monospace: '"Roboto Mono", monospace',
   },
   fontSizes: [
@@ -65,6 +65,9 @@ module.exports = {
       textTransform: 'uppercase',
       letterSpacing: '0.1em',
     },
+    body: {
+      paddingBottom: 2,
+    }
   },
   variants: {
     avatar: {
@@ -79,6 +82,7 @@ module.exports = {
     },
     link: {
       color: 'primary',
+      textDecoration: 'none',
     },
     nav: {
       variant: 'text.caps',
@@ -114,6 +118,7 @@ module.exports = {
       bg: 'secondary',
     },
   },
+  // TODO: Not sure how to handle this one yet...
   styles: {
     root: {
       fontFamily: 'body',

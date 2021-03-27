@@ -2,19 +2,48 @@ import themes from './themes';
 
 <head>
   <title>Mikro Component Library</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <mikro-theme-provider theme=themes>
-    <mikro-box p=3 bg="background">
-      <mikro-header as="h1">Mikro</mikro-header>
-      <mikro-text>A tiny component Marko component Library inspired by 
-        <mikro-link href="https://rebassjs.org/">Rebass</mikro-link>
-      </mikro-text>
-    </mikro-box>
-    <mikro-box pl=4>
-      <mikro-button>Get Started!</mikro-button>
-    </mikro-box>
-  </mikro-theme-provider>
-  <mikro-styles />
-</body>
+    <mikro-flex flexDirection="column" min-height="100vh">
+      <header />
 
+      <mikro-box p=3 bg="background" flex=1>
+        <mikro-text>
+          A tiny component Marko component Library inspired by 
+          <mikro-link href="https://rebassjs.org/">Rebass</mikro-link>
+
+        </mikro-text>
+        
+        <mikro-text>
+          Mikro is a quick way to kickstart your Marko-based design system with both server-side
+          rendering and theming support built in.
+        </mikro-text>
+
+        <!-- TODO: Componentize -->
+        <mikro-box>
+          <mikro-text>
+            Mikro uses a declarative css-in-js syntax similar to emotion or styled components
+            in order to enable quick iterations.
+          </mikro-text>
+        </mikro-box>
+
+        <mikro-box mt=3>
+          <mikro-button>Get Started!</mikro-button>
+
+        </mikro-box>
+
+      </mikro-box>
+
+      <footer />
+
+    </mikro-flex>
+
+  </mikro-theme-provider>
+
+  <mikro-styles />
+
+</body>
