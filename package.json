@@ -4,7 +4,7 @@
   "description": "A small set of css-in-js based Marko components",
   "main": "index.js",
   "scripts": {
-    "build": "marko-build ./site",
+    "build": "marko-build ./site --static",
     "serve": "marko-serve ./site",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
