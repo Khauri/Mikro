@@ -11,11 +11,6 @@
   },
   "author": "",
   "license": "ISC",
-  "peerDependencies": {
-    "jss": "^10.5.1",
-    "jss-preset-default": "^10.5.1",
-    "styled-system": "^5.1.5"
-  },
   "bit": {
     "env": {
       "compiler": "bit.envs/compilers/typescript@3.1.53"
@@ -28,7 +23,8 @@
     "@emotion/css": "^11.1.3",
     "@emotion/server": "^11.0.0",
     "@marko-tags/context": "^2.2.2",
-    "@styled-system/css": "^5.1.5"
+    "@styled-system/css": "^5.1.5",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.13.13",
